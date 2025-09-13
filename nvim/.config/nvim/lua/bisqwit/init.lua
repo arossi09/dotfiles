@@ -22,7 +22,6 @@ local colors = {
 
 function M.colorscheme()
 
-
     vim.o.background = 'dark'
     vim.g.colors_name = 'bisqwit'
     local set = vim.api.nvim_set_hl
