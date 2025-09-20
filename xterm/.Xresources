@@ -1,7 +1,8 @@
 XTerm*faceName: PxPlus IBM VGA 8x16
-XTerm*faceSize: 22
+XTerm*faceSize: 19
 XTerm*renderFont: true
 XTerm*boldMode : false
 XTerm*faceDoublesize: false
 XTerm*background: #000000
 XTerm*foreground: #FFFFFF
+
