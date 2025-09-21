@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "PxPlus IBM VGA 8x16:pixelsize=16:antialias=false:autohint=false";
+static char *font = "PxPlus IBM VGA 8x16:pixelsize=24:antialias=false:autohint=false";
 static int borderpx = 2;
 
 /*

@@ -102,6 +102,9 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
+alias cdwm='vim ~/.config/dwm/config.h'
+alias cst='vim ~/.config/st/config.h'
+alias mdwm='cd ~/.config/dwm/; sudo make clean install; cd -'
+alias mst='cd ~/.config/st/; sudo make clean install; cd -'
 alias vim=nvim
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
