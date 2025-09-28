@@ -17,6 +17,10 @@ return {
         config =function()
             vim.lsp.enable('emmylua_ls')
             vim.lsp.enable('clangd')
+            vim.diagnostic.config({
+                virtual_text = false,
+                virtual_lines = {current_line = true},
+            })
         end,
     }
 }
