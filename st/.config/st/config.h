@@ -5,7 +5,11 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
+<<<<<<< HEAD
 static char *font = "PxPlus IBM VGA 8x16:pixelsize=24:antialias=false:autohint=false";
+=======
+static char *font = "JetBrainsMono Nerd Font:pixelsize=16:antialias=true:autohint=true";
+>>>>>>> 7aa6fffa4be3c558346fc34bd56a8407b55da92d
 static int borderpx = 2;
 
 /*

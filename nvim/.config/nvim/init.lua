@@ -1,10 +1,12 @@
 require("config.settings")
 require("config.keybinds")
 require("config.lazy")
-require('bisqwit').colorscheme()
+
+-- require('bisqwit').colorscheme()
 
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>pf', builtin.find_files, {desc = 'Find Files'})
 vim.keymap.set('n', '<leader>y', '"+y', {noremap = true, silent = true})
 vim.keymap.set('v', '<leader>y', '"+y', {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>pp', '"+p', {noremap = true, silent = true})
+vim.keymap.set('n', '<leader>pv', ':Ex<CR>')
