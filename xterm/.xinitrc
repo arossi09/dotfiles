@@ -12,4 +12,6 @@ while :; do
     sleep 1
 done &
 
+#feh --bg-scale Wallpapers/background.png &
+
 exec dwm
