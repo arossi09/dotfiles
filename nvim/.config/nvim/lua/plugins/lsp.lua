@@ -17,6 +17,7 @@ return {
         config =function()
             vim.lsp.enable('emmylua_ls')
             vim.lsp.enable('clangd')
+            vim.lsp.enable('rust_analyzer')
             vim.diagnostic.config({
                 virtual_text = false,
                 virtual_lines = {current_line = true},
