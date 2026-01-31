@@ -1,20 +1,25 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
-
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+export PATH=/Users/ant/depot_tools:$PATH
+export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
 
+autoload -U colors && colors
+
+
+PS1="%{$fg[blue]%}%~%{$fg[blue]%} %{$reset_color%}$%b "
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+#ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+#ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -100,11 +105,23 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias cdwm='vim ~/.config/dwm/config.h'
-alias cst='vim ~/.config/st/config.h'
-alias mdwm='cd ~/.config/dwm/; sudo make clean install; cd -'
-alias mst='cd ~/.config/st/; sudo make clean install; cd -'
+
 alias vim=nvim
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias zshconfig="vim ~/.zshrc"
+alias notes="vim ~/notes/"
+alias track="~/.config/scripts/time.sh"
+alias cnvim="cd ~/.config/nvim/"
+alias tnotes="$HOME/.config/scripts/tmux-launcher.sh $HOME/Notes/4th/F2025"
+alias ts="$HOME/.config/scripts/tmux-launcher.sh"
+alias os="vim ~/vaults/ant-obsidian-main"
+alias osn="vim +ObsidianNew ~/vaults/ant-obsidian-main"
+
+export CPATH=/opt/homebrew/include
+export LIBRARY_PATH=/opt/homebrew/lib
+
+export PATH="$HOME/.pyenv/bin:$PATH"
+export PATH="$PATH:$HOME/.config/emacs/bin"
+eval "$(pyenv init --path)"
+eval "$(pyenv virtualenv-init -)"
