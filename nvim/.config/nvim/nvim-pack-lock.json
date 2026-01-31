@@ -1,0 +1,59 @@
+{
+  "plugins": {
+    "adwaita.nvim": {
+      "rev": "93f3bed",
+      "src": "https://github.com/Mofiqul/adwaita.nvim"
+    },
+    "gruvbox-material": {
+      "rev": "790afe9",
+      "src": "https://github.com/sainnhe/gruvbox-material"
+    },
+    "mason.nvim": {
+      "rev": "44d1e90",
+      "src": "https://github.com/mason-org/mason.nvim"
+    },
+    "nvim-cmp": {
+      "rev": "85bbfad",
+      "src": "https://github.com/hrsh7th/nvim-cmp"
+    },
+    "nvim-lspconfig": {
+      "rev": "419b082",
+      "src": "https://github.com/neovim/nvim-lspconfig"
+    },
+    "nvim-surround": {
+      "rev": "1098d7b",
+      "src": "https://github.com/kylechui/nvim-surround"
+    },
+    "nvim-treesitter": {
+      "rev": "ec034813",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter"
+    },
+    "obsidian.nvim": {
+      "rev": "14e0427",
+      "src": "https://github.com/epwalsh/obsidian.nvim"
+    },
+    "oil.nvim": {
+      "rev": "f55b25e",
+      "src": "https://github.com/stevearc/oil.nvim"
+    },
+    "plenary.nvim": {
+      "rev": "b9fd522",
+      "src": "https://github.com/nvim-lua/plenary.nvim"
+    },
+    "telescope.nvim": {
+      "rev": "a0bbec2"
+    },
+    "vague.nvim": {
+      "rev": "fcc2835",
+      "src": "https://github.com/vague2k/vague.nvim"
+    },
+    "vimtex": {
+      "rev": "f7073680",
+      "src": "https://github.com/lervag/vimtex"
+    },
+    "zenbones.nvim": {
+      "rev": "4635a3f",
+      "src": "https://github.com/zenbones-theme/zenbones.nvim"
+    }
+  }
+}
