@@ -1,7 +1,6 @@
 vim.o.number = true
-vim.o.signcolumn = "yes"
 vim.o.numberwidth = 2
-vim.o.signcolumn= "yes:1"
+vim.o.signcolumn = "yes:1"
 vim.o.relativenumber = true
 vim.o.wrap = false
 vim.o.tabstop = 2
@@ -20,20 +19,24 @@ vim.keymap.set('n', '<leader>q', ':quit<CR>')
 vim.keymap.set({ 'n', 'v', 'x' }, '<leader>y', '"+y<CR>')
 vim.keymap.set({ 'n', 'v', 'x' }, '<leader>d', '"+d<CR>')
 
+
 vim.pack.add({
-	{ src = "https://github.com/akinsho/bufferline.nvim"},
-	{ src = "https://github.com/miikanissi/modus-themes.nvim"},
-	{ src = "https://github.com/lervag/vimtex" },   -- for latex compiler in vim
-	{ src = "https://github.com/epwalsh/obsidian.nvim" }, -- for obsidian support for nvim
-	{ src = "https://github.com/sainnhe/gruvbox-material" }, -- a theme
-	{ src = "https://github.com/stevearc/oil.nvim" }, 			 -- directory viewer
-	{ src = "https://github.com/kylechui/nvim-surround" },	 -- to help with surrounding parenthesis, brackets, etc
-	{ src = "https://github.com/nvim-lua/plenary.nvim" },    -- idk some type of support
-	{ src = "https://github.com/nvim-telescope/telescope.nvim" }, -- a fuzzy finder
-	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" },  -- for syntax highlighting
-	{ src = "https://github.com/neovim/nvim-lspconfig" },		-- for langauge server support for highlighting syntax and other
-	{ src = "https://github.com/mason-org/mason.nvim" },		-- for searching languager servers
+	{ src = "https://github.com/windwp/nvim-autopairs"},
+	{ src = "https://github.com/folke/snacks.nvim" },              -- quality of life
+	{ src = "https://github.com/akinsho/bufferline.nvim" },        -- buffer tabs at top
+	{ src = "https://github.com/miikanissi/modus-themes.nvim" },   -- modus theme
+	{ src = "https://github.com/sainnhe/gruvbox-material" },       -- a theme
+	{ src = "https://github.com/lervag/vimtex" },                  -- for latex compiler in vim
+	{ src = "https://github.com/epwalsh/obsidian.nvim" },          -- for obsidian support for nvim
+	{ src = "https://github.com/stevearc/oil.nvim" },              -- directory viewer
+	{ src = "https://github.com/kylechui/nvim-surround" },         -- to help with surrounding parenthesis, brackets, etc
+	{ src = "https://github.com/nvim-lua/plenary.nvim" },          -- idk some type of support
+	{ src = "https://github.com/nvim-telescope/telescope.nvim" },  -- a fuzzy finder
+	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" }, -- for syntax highlighting
+	{ src = "https://github.com/neovim/nvim-lspconfig" },          -- for langauge server support for highlighting syntax and other
+	{ src = "https://github.com/mason-org/mason.nvim" },           -- for searching languager servers
 })
+
 
 -- colorschemes
 vim.g.gruvbox_material_background = "hard"
@@ -43,10 +46,8 @@ vim.g.gruvbox_material_enable_bold = 1
 vim.cmd("colorscheme modus")
 vim.cmd(":hi statusline guibg=NONE")
 
-
-
 vim.api.nvim_set_hl(0, "SignColumn", {
-  bg = "NONE",
+	bg = "NONE",
 })
 
 -- telescope
@@ -139,15 +140,15 @@ require("obsidian").setup({
 	disable_frontmatter = true,
 
 	daily_notes = {
-    folder = "Daily",        
-    template = "Daily Note Template.md",
-  },
+		folder = "Daily",
+		template = "Daily Note Template.md",
+	},
 
 	note_id_func = function(title)
-  if title and title ~= "" then
-    return title
-  end
-  	return os.date("%Y%m%d%H%S")
+		if title and title ~= "" then
+			return title
+		end
+		return os.date("%Y%m%d%H%S")
 	end,
 
 })
@@ -157,6 +158,21 @@ vim.api.nvim_set_keymap("n", "<Leader>on", ":ObsidianNew ", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>os", ":ObsidianSearch<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>ot", ":ObsidianTemplate<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>ob", ":ObsidianBacklinks<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<Leader>or", ":ObsidianRename ", { noremap = true})
-vim.api.nvim_set_keymap("n", "<Leader>od", ":ObsidianToday<CR>", { noremap = true})
+vim.api.nvim_set_keymap("n", "<Leader>or", ":ObsidianRename ", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>od", ":ObsidianToday<CR>", { noremap = true })
 vim.opt.conceallevel = 2
+
+
+-- snacks
+local Snacks = require("snacks")
+Snacks.setup({
+	terminal = { enabled = true },
+
+})
+
+vim.keymap.set({ "n", "t" }, "<C-_>", function()
+	Snacks.terminal()
+end, { desc = "Toggle Terminal" })
+
+-- autopairs
+require("nvim-autopairs").setup({})

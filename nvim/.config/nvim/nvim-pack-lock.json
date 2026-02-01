@@ -24,6 +24,10 @@
       "rev": "c57c2c5",
       "src": "https://github.com/miikanissi/modus-themes.nvim"
     },
+    "nvim-autopairs": {
+      "rev": "59bce2e",
+      "src": "https://github.com/windwp/nvim-autopairs"
+    },
     "nvim-cmp": {
       "rev": "da88697",
       "src": "https://github.com/hrsh7th/nvim-cmp"
@@ -51,6 +55,10 @@
     "plenary.nvim": {
       "rev": "b9fd522",
       "src": "https://github.com/nvim-lua/plenary.nvim"
+    },
+    "snacks.nvim": {
+      "rev": "fe7cfe9",
+      "src": "https://github.com/folke/snacks.nvim"
     },
     "telescope.nvim": {
       "rev": "ad7d958"
