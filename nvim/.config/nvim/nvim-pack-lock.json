@@ -4,20 +4,32 @@
       "rev": "93f3bed",
       "src": "https://github.com/Mofiqul/adwaita.nvim"
     },
+    "bufferline.nvim": {
+      "rev": "655133c",
+      "src": "https://github.com/akinsho/bufferline.nvim"
+    },
     "gruvbox-material": {
       "rev": "790afe9",
       "src": "https://github.com/sainnhe/gruvbox-material"
+    },
+    "lualine.nvim": {
+      "rev": "47f91c4",
+      "src": "https://github.com/nvim-lualine/lualine.nvim"
     },
     "mason.nvim": {
       "rev": "44d1e90",
       "src": "https://github.com/mason-org/mason.nvim"
     },
+    "modus-themes.nvim": {
+      "rev": "c57c2c5",
+      "src": "https://github.com/miikanissi/modus-themes.nvim"
+    },
     "nvim-cmp": {
-      "rev": "85bbfad",
+      "rev": "da88697",
       "src": "https://github.com/hrsh7th/nvim-cmp"
     },
     "nvim-lspconfig": {
-      "rev": "419b082",
+      "rev": "3f58aec",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-surround": {
@@ -25,7 +37,7 @@
       "src": "https://github.com/kylechui/nvim-surround"
     },
     "nvim-treesitter": {
-      "rev": "ec034813",
+      "rev": "42fc28ba",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
     "obsidian.nvim": {
@@ -41,10 +53,10 @@
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "telescope.nvim": {
-      "rev": "a0bbec2"
+      "rev": "ad7d958"
     },
     "vague.nvim": {
-      "rev": "fcc2835",
+      "rev": "30d2239",
       "src": "https://github.com/vague2k/vague.nvim"
     },
     "vimtex": {

@@ -1,13 +1,16 @@
 vim.o.number = true
 vim.o.signcolumn = "yes"
+vim.o.numberwidth = 2
+vim.o.signcolumn= "yes:1"
 vim.o.relativenumber = true
-vim.o.wrap = true 
+vim.o.wrap = false
 vim.o.tabstop = 2
 vim.o.shiftwidth = 2
 vim.o.swapfile = false
 vim.g.mapleader = " "
 vim.o.winborder = "none"
 vim.o.scrolloff = 10
+vim.o.showtabline = 2
 
 vim.keymap.set('n', '<leader>s', ':update<CR> :source<CR>')
 vim.keymap.set('n', '<leader>w', ':write<CR>')
@@ -18,7 +21,8 @@ vim.keymap.set({ 'n', 'v', 'x' }, '<leader>y', '"+y<CR>')
 vim.keymap.set({ 'n', 'v', 'x' }, '<leader>d', '"+d<CR>')
 
 vim.pack.add({
-	{ src = "https://github.com/Mofiqul/adwaita.nvim"},
+	{ src = "https://github.com/akinsho/bufferline.nvim"},
+	{ src = "https://github.com/miikanissi/modus-themes.nvim"},
 	{ src = "https://github.com/lervag/vimtex" },   -- for latex compiler in vim
 	{ src = "https://github.com/epwalsh/obsidian.nvim" }, -- for obsidian support for nvim
 	{ src = "https://github.com/sainnhe/gruvbox-material" }, -- a theme
@@ -31,20 +35,19 @@ vim.pack.add({
 	{ src = "https://github.com/mason-org/mason.nvim" },		-- for searching languager servers
 })
 
-
 -- colorschemes
 vim.g.gruvbox_material_background = "hard"
 vim.g.gruvbox_material_foreground = "original"
 vim.g.gruvbox_material_enable_italic = 1
 vim.g.gruvbox_material_enable_bold = 1
-vim.cmd("colorscheme gruvbox-material")
+vim.cmd("colorscheme modus")
 vim.cmd(":hi statusline guibg=NONE")
 
-vim.g.adwaita_darker = true 
-vim.g.adwaita_disable_cursorline = true -- to disable cursorline
---vim.cmd([[colorscheme adwaita]])
 
---require('bisqwit').colorscheme();
+
+vim.api.nvim_set_hl(0, "SignColumn", {
+  bg = "NONE",
+})
 
 -- telescope
 
