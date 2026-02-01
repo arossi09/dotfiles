@@ -123,5 +123,6 @@ export LIBRARY_PATH=/opt/homebrew/lib
 
 export PATH="$HOME/.pyenv/bin:$PATH"
 export PATH="$PATH:$HOME/.config/emacs/bin"
+export PATH="$PATH:~/.local/bin"
 eval "$(pyenv init --path)"
 eval "$(pyenv virtualenv-init -)"

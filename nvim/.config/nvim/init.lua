@@ -133,7 +133,7 @@ require("obsidian").setup({
 		},
 	},
 	templates = {
-		folder = "/Users/ant/vaults/ant-obsidian-main/Templates",
+		folder = "~/vaults/ant-obsidian-main/Templates",
 		date_format = "%Y-%m-%d-%a",
 		time_format = "%H:%M",
 	},
