@@ -21,11 +21,14 @@ vim.keymap.set({ 'n', 'v', 'x' }, '<leader>d', '"+d<CR>')
 
 
 vim.pack.add({
-	{ src = "https://github.com/windwp/nvim-autopairs"},
+	{ src = "https://github.com/hrsh7th/nvim-cmp" }, -- for auto completion
+	{ src = "https://github.com/hrsh7th/cmp-nvim-lsp" },
+	{ src = "https://github.com/hrsh7th/cmp-buffer" },
+	{ src = "https://github.com/hrsh7th/cmp-path" },
+	{ src = "https://github.com/windwp/nvim-autopairs" },          -- For auto pairing (), etc.
 	{ src = "https://github.com/folke/snacks.nvim" },              -- quality of life
 	{ src = "https://github.com/akinsho/bufferline.nvim" },        -- buffer tabs at top
 	{ src = "https://github.com/miikanissi/modus-themes.nvim" },   -- modus theme
-	{ src = "https://github.com/sainnhe/gruvbox-material" },       -- a theme
 	{ src = "https://github.com/lervag/vimtex" },                  -- for latex compiler in vim
 	{ src = "https://github.com/epwalsh/obsidian.nvim" },          -- for obsidian support for nvim
 	{ src = "https://github.com/stevearc/oil.nvim" },              -- directory viewer
@@ -38,16 +41,24 @@ vim.pack.add({
 })
 
 
+
 -- colorschemes
 vim.g.gruvbox_material_background = "hard"
 vim.g.gruvbox_material_foreground = "original"
 vim.g.gruvbox_material_enable_italic = 1
 vim.g.gruvbox_material_enable_bold = 1
 vim.cmd("colorscheme modus")
-vim.cmd(":hi statusline guibg=NONE")
+--vim.cmd(":hi statusline guibg=NONE")
 
 vim.api.nvim_set_hl(0, "SignColumn", {
 	bg = "NONE",
+})
+
+--treesitter
+require('nvim-treesitter.configs').setup({
+	highlight = {
+		enable = true,
+	},
 })
 
 -- telescope
@@ -82,9 +93,11 @@ vim.keymap.set('n', '<leader>sh', builtin.help_tags)
 
 
 -- lsp
-vim.lsp.enable({ "lua_ls", "rust_analyzer", "superhtml", "clangd", "cssls", "biome", "ts_ls", "emmet_language_server",
-	"glsl_analyzer", "pylsp", "texlab" })
+vim.lsp.enable({ "harper_ls", "lua_ls", "rust_analyzer", "superhtml", "clangd", "cssls", "biome", "ts_ls",
+	"emmet_language_server",
+	"glsl_analyzer", "pylsp", "texlab", "gopls" })
 
+vim.keymap.set("n", "M", "<cmd>Man<cr>")
 vim.lsp.config("lua_ls", {
 	settings = {
 		Lua = {
@@ -110,8 +123,6 @@ vim.keymap.set('n', '<leader>e', ":Oil<CR>")
 
 --mason
 require "mason".setup()
-
-
 
 vim.api.nvim_create_autocmd('LspAttach', {
 	group = vim.api.nvim_create_augroup('my.lsp', {}),
@@ -164,11 +175,11 @@ vim.opt.conceallevel = 2
 
 
 -- snacks
-local Snacks = require("snacks")
-Snacks.setup({
-	terminal = { enabled = true },
+-- local Snacks = require("snacks")
+--Snacks.setup({
+-- terminal = { enabled = true },
 
-})
+--})
 
 vim.keymap.set({ "n", "t" }, "<C-_>", function()
 	Snacks.terminal()
@@ -176,3 +187,21 @@ end, { desc = "Toggle Terminal" })
 
 -- autopairs
 require("nvim-autopairs").setup({})
+
+
+-- cmp
+local cmp = require("cmp")
+
+
+cmp.setup({
+	mapping = cmp.mapping.preset.insert({
+		["<C-Space>"] = cmp.mapping.complete(),
+		["<CR>"] = cmp.mapping.confirm({ select = true }),
+	}),
+
+	sources = cmp.config.sources({
+		{ name = "nvim_lsp" },
+		{ name = "buffer" },
+		{ name = "path" },
+	})
+})

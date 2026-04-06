@@ -8,6 +8,18 @@
       "rev": "655133c",
       "src": "https://github.com/akinsho/bufferline.nvim"
     },
+    "cmp-buffer": {
+      "rev": "b74fab3",
+      "src": "https://github.com/hrsh7th/cmp-buffer"
+    },
+    "cmp-nvim-lsp": {
+      "rev": "cbc7b02",
+      "src": "https://github.com/hrsh7th/cmp-nvim-lsp"
+    },
+    "cmp-path": {
+      "rev": "c642487",
+      "src": "https://github.com/hrsh7th/cmp-path"
+    },
     "gruvbox-material": {
       "rev": "790afe9",
       "src": "https://github.com/sainnhe/gruvbox-material"
@@ -33,11 +45,11 @@
       "src": "https://github.com/hrsh7th/nvim-cmp"
     },
     "nvim-lspconfig": {
-      "rev": "3f58aec",
+      "rev": "ead0f5f",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-surround": {
-      "rev": "1098d7b",
+      "rev": "ce4ad4a",
       "src": "https://github.com/kylechui/nvim-surround"
     },
     "nvim-treesitter": {
@@ -49,7 +61,7 @@
       "src": "https://github.com/epwalsh/obsidian.nvim"
     },
     "oil.nvim": {
-      "rev": "f55b25e",
+      "rev": "0fcc838",
       "src": "https://github.com/stevearc/oil.nvim"
     },
     "plenary.nvim": {
@@ -57,22 +69,22 @@
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "snacks.nvim": {
-      "rev": "fe7cfe9",
+      "rev": "9912042",
       "src": "https://github.com/folke/snacks.nvim"
     },
     "telescope.nvim": {
-      "rev": "ad7d958"
+      "rev": "5255aa2"
     },
     "vague.nvim": {
-      "rev": "30d2239",
+      "rev": "4abd79d",
       "src": "https://github.com/vague2k/vague.nvim"
     },
     "vimtex": {
-      "rev": "f7073680",
+      "rev": "fcd15338",
       "src": "https://github.com/lervag/vimtex"
     },
     "zenbones.nvim": {
-      "rev": "4635a3f",
+      "rev": "22b7fb7",
       "src": "https://github.com/zenbones-theme/zenbones.nvim"
     }
   }
