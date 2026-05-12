@@ -2,14 +2,15 @@ vim.o.number = true
 vim.o.numberwidth = 2
 vim.o.signcolumn = "yes:1"
 vim.o.relativenumber = true
+vim.o.expandtab = true
 vim.o.wrap = false
-vim.o.tabstop = 2
-vim.o.shiftwidth = 2
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
 vim.o.swapfile = false
 vim.g.mapleader = " "
 vim.o.winborder = "none"
 vim.o.scrolloff = 10
-vim.o.showtabline = 2
+vim.o.showtabline = 4
 
 vim.keymap.set('n', '<leader>s', ':update<CR> :source<CR>')
 vim.keymap.set('n', '<leader>w', ':write<CR>')
@@ -18,7 +19,6 @@ vim.keymap.set('n', '<leader>q', ':quit<CR>')
 
 vim.keymap.set({ 'n', 'v', 'x' }, '<leader>y', '"+y<CR>')
 vim.keymap.set({ 'n', 'v', 'x' }, '<leader>d', '"+d<CR>')
-
 
 vim.pack.add({
 	{ src = "https://github.com/hrsh7th/nvim-cmp" }, -- for auto completion
@@ -94,8 +94,8 @@ vim.keymap.set('n', '<leader>sh', builtin.help_tags)
 
 -- lsp
 vim.lsp.enable({ "harper_ls", "lua_ls", "rust_analyzer", "superhtml", "clangd", "cssls", "biome", "ts_ls",
-	"emmet_language_server",
-	"glsl_analyzer", "pylsp", "texlab", "gopls" })
+"emmet_language_server",
+"glsl_analyzer", "pylsp", "texlab", "gopls" })
 
 vim.keymap.set("n", "M", "<cmd>Man<cr>")
 vim.lsp.config("lua_ls", {
@@ -177,31 +177,31 @@ vim.opt.conceallevel = 2
 -- snacks
 -- local Snacks = require("snacks")
 --Snacks.setup({
--- terminal = { enabled = true },
+	-- terminal = { enabled = true },
 
---})
+	--})
 
-vim.keymap.set({ "n", "t" }, "<C-_>", function()
-	Snacks.terminal()
-end, { desc = "Toggle Terminal" })
+	vim.keymap.set({ "n", "t" }, "<C-_>", function()
+		Snacks.terminal()
+	end, { desc = "Toggle Terminal" })
 
--- autopairs
-require("nvim-autopairs").setup({})
-
-
--- cmp
-local cmp = require("cmp")
+	-- autopairs
+	require("nvim-autopairs").setup({})
 
 
-cmp.setup({
-	mapping = cmp.mapping.preset.insert({
-		["<C-Space>"] = cmp.mapping.complete(),
-		["<CR>"] = cmp.mapping.confirm({ select = true }),
-	}),
+	-- cmp
+	local cmp = require("cmp")
 
-	sources = cmp.config.sources({
-		{ name = "nvim_lsp" },
-		{ name = "buffer" },
-		{ name = "path" },
+
+	cmp.setup({
+		mapping = cmp.mapping.preset.insert({
+			["<C-Space>"] = cmp.mapping.complete(),
+			["<CR>"] = cmp.mapping.confirm({ select = true }),
+		}),
+
+		sources = cmp.config.sources({
+			{ name = "nvim_lsp" },
+			{ name = "buffer" },
+			{ name = "path" },
+		})
 	})
-})
