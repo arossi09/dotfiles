@@ -121,6 +121,3 @@ alias osn="vim +ObsidianNew ~/vaults/ant-obsidian-main"
 export CPATH=/opt/homebrew/include
 export LIBRARY_PATH=/opt/homebrew/lib
 
-export PATH="$HOME/.pyenv/bin:$PATH"
-export PATH="$PATH:$HOME/.config/emacs/bin"
-export PATH="$PATH:~/.local/bin"
