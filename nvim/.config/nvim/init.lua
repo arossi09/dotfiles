@@ -5,6 +5,7 @@ vim.o.relativenumber = true
 vim.o.expandtab = true
 vim.o.wrap = false
 vim.o.tabstop = 4
+vim.o.softtabstop = 4
 vim.o.shiftwidth = 4
 vim.o.swapfile = false
 vim.g.mapleader = " "
@@ -21,29 +22,30 @@ vim.keymap.set({ 'n', 'v', 'x' }, '<leader>y', '"+y<CR>')
 vim.keymap.set({ 'n', 'v', 'x' }, '<leader>d', '"+d<CR>')
 
 vim.pack.add({
-	{ src = "https://github.com/hrsh7th/nvim-cmp" }, -- for auto completion
-	{ src = "https://github.com/hrsh7th/cmp-nvim-lsp" },
-	{ src = "https://github.com/hrsh7th/cmp-buffer" },
-	{ src = "https://github.com/hrsh7th/cmp-path" },
-	{ src = "https://github.com/windwp/nvim-autopairs" },          -- For auto pairing (), etc.
-	{ src = "https://github.com/folke/snacks.nvim" },              -- quality of life
-	{ src = "https://github.com/akinsho/bufferline.nvim" },        -- buffer tabs at top
-	{ src = "https://github.com/miikanissi/modus-themes.nvim" },   -- modus theme
-	{ src = "https://github.com/lervag/vimtex" },                  -- for latex compiler in vim
-	{ src = "https://github.com/epwalsh/obsidian.nvim" },          -- for obsidian support for nvim
-	{ src = "https://github.com/stevearc/oil.nvim" },              -- directory viewer
-	{ src = "https://github.com/kylechui/nvim-surround" },         -- to help with surrounding parenthesis, brackets, etc
-	{ src = "https://github.com/nvim-lua/plenary.nvim" },          -- idk some type of support
-	{ src = "https://github.com/nvim-telescope/telescope.nvim" },  -- a fuzzy finder
-	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" }, -- for syntax highlighting
-	{ src = "https://github.com/neovim/nvim-lspconfig" },          -- for langauge server support for highlighting syntax and other
-	{ src = "https://github.com/mason-org/mason.nvim" },           -- for searching languager servers
+    { src = "https://github.com/hrsh7th/nvim-cmp" }, -- for auto completion
+    { src = "https://github.com/hrsh7th/cmp-nvim-lsp" },
+    { src = "https://github.com/hrsh7th/cmp-buffer" },
+    { src = "https://github.com/hrsh7th/cmp-path" },
+    { src = "https://github.com/windwp/nvim-autopairs" },        -- For auto pairing (), etc.
+    { src = "https://github.com/folke/snacks.nvim" },            -- quality of life
+    { src = "https://github.com/akinsho/bufferline.nvim" },      -- buffer tabs at top
+    { src = "https://github.com/miikanissi/modus-themes.nvim" }, -- modus theme
+    { src = "https://github.com/lervag/vimtex" },                -- for latex compiler in vim
+    { src = "https://github.com/epwalsh/obsidian.nvim" },        -- for obsidian support for nvim
+    { src = "https://github.com/stevearc/oil.nvim" },            -- directory viewer
+    { src = "https://github.com/kylechui/nvim-surround" },       -- to help with surrounding parenthesis, brackets, etc
+    { src = "https://github.com/nvim-lua/plenary.nvim" },        -- idk some type of support
+    { src = "https://github.com/nvim-telescope/telescope.nvim" }, -- a fuzzy finder
+    { src = "https://github.com/nvim-treesitter/nvim-treesitter" }, -- for syntax highlighting
+    { src = "https://github.com/neovim/nvim-lspconfig" },        -- for langauge server support for highlighting syntax and other
+    { src = "https://github.com/mason-org/mason.nvim" },         -- for searching languager servers
 })
 
 
 
 -- colorschemes
-vim.g.gruvbox_material_background = "hard"
+vim.o.background = "dark"
+vim.g.gruvbox_material_background = "light"
 vim.g.gruvbox_material_foreground = "original"
 vim.g.gruvbox_material_enable_italic = 1
 vim.g.gruvbox_material_enable_bold = 1
@@ -51,38 +53,38 @@ vim.cmd("colorscheme modus")
 --vim.cmd(":hi statusline guibg=NONE")
 
 vim.api.nvim_set_hl(0, "SignColumn", {
-	bg = "NONE",
+    bg = "NONE",
 })
 
 --treesitter
 require('nvim-treesitter.configs').setup({
-	highlight = {
-		enable = true,
-	},
+    highlight = {
+        enable = true,
+    },
 })
 
 -- telescope
 
 require('telescope').setup {
-	defaults = {
-		color_devicons = true,
-		sorting_strategy = "ascending",
-		borderchars = { "", "", "", "", "", "", "", "" },
-		path_displays = "smart",
-		layout_strategy = "horizontal",
-		layout_config = {
-			height          = 100,
-			width           = 400,
-			prompt_position = "top",
-			preview_cutoff  = 40,
-		},
-		mappings = {
-			i = {
-				["<C-j>"] = "move_selection_next",
-				["<C-k>"] = "move_selection_previous"
-			}
-		}
-	}
+    defaults = {
+        color_devicons = true,
+        sorting_strategy = "ascending",
+        borderchars = { "", "", "", "", "", "", "", "" },
+        path_displays = "smart",
+        layout_strategy = "horizontal",
+        layout_config = {
+            height          = 100,
+            width           = 400,
+            prompt_position = "top",
+            preview_cutoff  = 40,
+        },
+        mappings = {
+            i = {
+                ["<C-j>"] = "move_selection_next",
+                ["<C-k>"] = "move_selection_previous",
+            }
+        }
+    }
 
 }
 
@@ -94,19 +96,19 @@ vim.keymap.set('n', '<leader>sh', builtin.help_tags)
 
 -- lsp
 vim.lsp.enable({ "harper_ls", "lua_ls", "rust_analyzer", "superhtml", "clangd", "cssls", "biome", "ts_ls",
-"emmet_language_server",
-"glsl_analyzer", "pylsp", "texlab", "gopls" })
+    "emmet_language_server",
+    "glsl_analyzer", "pylsp", "texlab", "gopls" })
 
 vim.keymap.set("n", "M", "<cmd>Man<cr>")
 vim.lsp.config("lua_ls", {
-	settings = {
-		Lua = {
-			workspace = {
-				library = vim.api.nvim_get_runtime_file("", true),
-			}
-		}
+    settings = {
+        Lua = {
+            workspace = {
+                library = vim.api.nvim_get_runtime_file("", true),
+            }
+        }
 
-	}
+    }
 })
 
 vim.keymap.set('n', '<leader>lf', vim.lsp.buf.format)
@@ -114,9 +116,9 @@ vim.keymap.set('n', '<leader>w', vim.diagnostic.open_float)
 
 -- oil
 require "oil".setup {
-	keymaps = {
-		["t"] = "actions.open_terminal",
-	}
+    keymaps = {
+        ["t"] = "actions.open_terminal",
+    }
 }
 vim.keymap.set('n', '<leader>e', ":Oil<CR>")
 
@@ -125,45 +127,57 @@ vim.keymap.set('n', '<leader>e', ":Oil<CR>")
 require "mason".setup()
 
 vim.api.nvim_create_autocmd('LspAttach', {
-	group = vim.api.nvim_create_augroup('my.lsp', {}),
-	callback = function(args)
-		local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
-		if client:supports_method('textDocument/completion') then
-			vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
-		end
-	end,
+    group = vim.api.nvim_create_augroup('my.lsp', {}),
+    callback = function(args)
+        local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
+        if client:supports_method('textDocument/completion') then
+            vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
+        end
+    end,
 })
 vim.cmd("set completeopt+=noselect")
 
 --obsidian
 require("obsidian").setup({
-	workspaces = {
-		{
-			name = "main",
-			path = "~/vaults/ant-obsidian-main",
-		},
-	},
-	templates = {
-		folder = "~/vaults/ant-obsidian-main/Templates",
-		date_format = "%Y-%m-%d-%a",
-		time_format = "%H:%M",
-	},
-	disable_frontmatter = true,
+    workspaces = {
+        {
+            name = "main",
+            path = "~/vaults/ant-obsidian-main",
+        },
+    },
+    templates = {
+        folder = "~/vaults/ant-obsidian-main/Templates",
+        date_format = "%Y-%m-%d-%a",
+        time_format = "%H:%M",
+    },
+    disable_frontmatter = true,
 
-	daily_notes = {
-		folder = "Daily",
-		template = "Daily Note Template.md",
-	},
+    daily_notes = {
+        folder = "Daily",
+        template = "Daily Note Template.md",
+    },
+    picker = {
+        name = "telescope.nvim",
+        note_mappings = {
+            new = "<C-x>",
+            insert_link = "<C-l>",
+        },
+        tag_mappings = {
+            tag_note = "<C-x>",
+            insert_tag = "<C-l>",
+        },
+    },
 
-	note_id_func = function(title)
-		if title and title ~= "" then
-			return title
-		end
-		return os.date("%Y%m%d%H%S")
-	end,
+    note_id_func = function(title)
+        if title and title ~= "" then
+            return title
+        end
+        return os.date("%Y%m%d%H%S")
+    end,
 
 })
 
+vim.api.nvim_set_keymap("n", "<Leader>ol", ":ObsidianLinks<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>oo", ":ObsidianOpen ", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>on", ":ObsidianNew ", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>os", ":ObsidianSearch<CR>", { noremap = true, silent = true })
@@ -177,31 +191,31 @@ vim.opt.conceallevel = 2
 -- snacks
 -- local Snacks = require("snacks")
 --Snacks.setup({
-	-- terminal = { enabled = true },
+-- terminal = { enabled = true },
 
-	--})
+--})
 
-	vim.keymap.set({ "n", "t" }, "<C-_>", function()
-		Snacks.terminal()
-	end, { desc = "Toggle Terminal" })
+vim.keymap.set({ "n", "t" }, "<C-_>", function()
+    Snacks.terminal()
+end, { desc = "Toggle Terminal" })
 
-	-- autopairs
-	require("nvim-autopairs").setup({})
-
-
-	-- cmp
-	local cmp = require("cmp")
+-- autopairs
+require("nvim-autopairs").setup({})
 
 
-	cmp.setup({
-		mapping = cmp.mapping.preset.insert({
-			["<C-Space>"] = cmp.mapping.complete(),
-			["<CR>"] = cmp.mapping.confirm({ select = true }),
-		}),
+-- cmp
+local cmp = require("cmp")
 
-		sources = cmp.config.sources({
-			{ name = "nvim_lsp" },
-			{ name = "buffer" },
-			{ name = "path" },
-		})
-	})
+
+cmp.setup({
+    mapping = cmp.mapping.preset.insert({
+        ["<C-Space>"] = cmp.mapping.complete(),
+        ["<CR>"] = cmp.mapping.confirm({ select = true }),
+    }),
+
+    sources = cmp.config.sources({
+        { name = "nvim_lsp" },
+        { name = "buffer" },
+        { name = "path" },
+    })
+})

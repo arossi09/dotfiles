@@ -1,7 +1,7 @@
 {
   "plugins": {
     "adwaita.nvim": {
-      "rev": "93f3bed",
+      "rev": "c607954",
       "src": "https://github.com/Mofiqul/adwaita.nvim"
     },
     "bufferline.nvim": {
@@ -21,70 +21,70 @@
       "src": "https://github.com/hrsh7th/cmp-path"
     },
     "gruvbox-material": {
-      "rev": "790afe9",
+      "rev": "11d779b",
       "src": "https://github.com/sainnhe/gruvbox-material"
     },
     "lualine.nvim": {
-      "rev": "47f91c4",
+      "rev": "221ce6b",
       "src": "https://github.com/nvim-lualine/lualine.nvim"
     },
     "mason.nvim": {
-      "rev": "44d1e90",
+      "rev": "16ba83b",
       "src": "https://github.com/mason-org/mason.nvim"
     },
     "modus-themes.nvim": {
-      "rev": "c57c2c5",
+      "rev": "17a6446",
       "src": "https://github.com/miikanissi/modus-themes.nvim"
     },
     "nvim-autopairs": {
-      "rev": "59bce2e",
+      "rev": "7b9923a",
       "src": "https://github.com/windwp/nvim-autopairs"
     },
     "nvim-cmp": {
-      "rev": "da88697",
+      "rev": "a1d5048",
       "src": "https://github.com/hrsh7th/nvim-cmp"
     },
     "nvim-lspconfig": {
-      "rev": "ead0f5f",
+      "rev": "9573948c",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-surround": {
-      "rev": "ce4ad4a",
+      "rev": "2e93e15",
       "src": "https://github.com/kylechui/nvim-surround"
     },
     "nvim-treesitter": {
-      "rev": "42fc28ba",
+      "rev": "cf12346a",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
     "obsidian.nvim": {
-      "rev": "14e0427",
+      "rev": "726b60c",
       "src": "https://github.com/epwalsh/obsidian.nvim"
     },
     "oil.nvim": {
-      "rev": "0fcc838",
+      "rev": "b91ee5a",
       "src": "https://github.com/stevearc/oil.nvim"
     },
     "plenary.nvim": {
-      "rev": "b9fd522",
+      "rev": "74b06c6",
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "snacks.nvim": {
-      "rev": "9912042",
+      "rev": "882c996",
       "src": "https://github.com/folke/snacks.nvim"
     },
     "telescope.nvim": {
-      "rev": "5255aa2"
+      "rev": "7d32479"
     },
     "vague.nvim": {
-      "rev": "4abd79d",
+      "rev": "fd58046",
       "src": "https://github.com/vague2k/vague.nvim"
     },
     "vimtex": {
-      "rev": "fcd15338",
+      "rev": "24e22991",
       "src": "https://github.com/lervag/vimtex"
     },
     "zenbones.nvim": {
-      "rev": "22b7fb7",
+      "rev": "239bdb9",
       "src": "https://github.com/zenbones-theme/zenbones.nvim"
     }
   }
